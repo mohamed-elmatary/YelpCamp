@@ -1,0 +1,18 @@
+﻿@{
+    string message = TempData["Message"] as string;
+    if (message != null)
+    {
+        string cssClass = TempData["cls"].ToString();
+
+        <div class="container" style="margin-top:20px">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-@cssClass alert-dismissible fade in" role="alert" style="width:100%;margin-left:15px">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong style="text-transform: capitalize">@cssClass! </strong>@message
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

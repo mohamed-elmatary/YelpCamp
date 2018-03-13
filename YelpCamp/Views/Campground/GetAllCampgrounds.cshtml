@@ -1,0 +1,32 @@
+﻿@model IEnumerable<YelpCamp.Dtos.CampgroundDTO>
+@{
+    ViewBag.Title = "GetAllCampgrounds";
+}
+<div class="container" style="padding-top:20px">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome To YelpCamp!</h1>
+            <p>View our hand-picked campgrounds from all over the world</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/campground/CreateCampground">Add New Campground</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap">
+        @foreach (var campground in Model)
+        {
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail" style="padding-bottom:8px;height:260px">
+                    <img src="@campground.Image" class="imageOfCampInGetall" style="height:60%" >
+                    <div class="caption">
+                        <h4>@campground.Name</h4>
+                    </div>
+                    <p>
+                        <a href="/campground/Details/@campground.Id" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
