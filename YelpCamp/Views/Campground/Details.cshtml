@@ -23,7 +23,7 @@
                     <h4><a>@Model.Name</a></h4>
                     <p>@Model.Description</p>
                     <p>
-                        <em>Submitted By<b> @Model.UserName</b></em>
+                        <em>Submitted By<b> @Model.UserName</b>, <span id="id_@Model.Id" class="dateCreated">@Model.CreatedAt.ToString("s", System.Globalization.CultureInfo.InvariantCulture)</span></em>
                     </p>
                     @if (User.Identity.GetUserId() == Model.UserId)
                     {
@@ -44,7 +44,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <strong>@comment.ApplicationUser.UserName</strong>
-                                <span class="pull-right">10 days ago</span>
+                                <span class="pull-right"><span id="id_@comment.Id" class="dateCreated">@comment.CreatedAt.ToString("s", System.Globalization.CultureInfo.InvariantCulture)</span></span>
                                 <p>
                                     @comment.Text
                                 </p>
@@ -61,10 +61,30 @@
         </div>
     </div>
 </div>
-
-
-
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+@section scripts{
+<script type="text/javascript">
+    $(function () {
+        
+            var Times = {}
+            $(".dateCreated").each(function () {
+                Times[$(this).attr("id").toString()] = $(this).text().toString();
+                $(this).html(moment($(this).text().toString()).fromNow());
+            });
+           
+            function timeAgo() {
+
+                $.each(Times, function (key, value) { $('#'+key).html(moment(value.toString()).fromNow()); });
+
+                setTimeout(timeAgo, 2000);
+            }
+            timeAgo();
+
+    });
+</script>
+
+
+}

@@ -241,6 +241,14 @@
     <Compile Include="Migrations\201803122255405_ModifyCampgroundModel.Designer.cs">
       <DependentUpon>201803122255405_ModifyCampgroundModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803131746345_updateCommentAndCampWithCreatAtDate.cs" />
+    <Compile Include="Migrations\201803131746345_updateCommentAndCampWithCreatAtDate.Designer.cs">
+      <DependentUpon>201803131746345_updateCommentAndCampWithCreatAtDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803131753170_updateCommentAndCampWithCreatAtDate1.cs" />
+    <Compile Include="Migrations\201803131753170_updateCommentAndCampWithCreatAtDate1.Designer.cs">
+      <DependentUpon>201803131753170_updateCommentAndCampWithCreatAtDate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -401,6 +409,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803122255405_ModifyCampgroundModel.resx">
       <DependentUpon>201803122255405_ModifyCampgroundModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803131746345_updateCommentAndCampWithCreatAtDate.resx">
+      <DependentUpon>201803131746345_updateCommentAndCampWithCreatAtDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803131753170_updateCommentAndCampWithCreatAtDate1.resx">
+      <DependentUpon>201803131753170_updateCommentAndCampWithCreatAtDate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

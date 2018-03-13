@@ -53,7 +53,7 @@ namespace YelpCamp.Controllers
                 return RedirectToAction("Details", "Campground", new { Id = campground.Id });
 
             }
-            Comment comment = new Comment() { Text = CommetDto.Text, ApplicationUserId = User.Identity.GetUserId() };
+            Comment comment = new Comment() { Text = CommetDto.Text, ApplicationUserId = User.Identity.GetUserId() ,CreatedAt = DateTime.Now};
             campground.Comments.Add(comment);
             _context.SaveChanges();
             return RedirectToAction("Details", "Campground", new { Id = CommetDto.CampgroundId });

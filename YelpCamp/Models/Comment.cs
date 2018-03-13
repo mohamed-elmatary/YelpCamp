@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -23,6 +24,6 @@ namespace YelpCamp.Models
         public int CampgroundId { get; set; }
 
 
-
+        public DateTime CreatedAt { get; set; }
     }
 }

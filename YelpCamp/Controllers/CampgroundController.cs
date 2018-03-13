@@ -53,6 +53,7 @@ namespace YelpCamp.Controllers
             //Campground newCampground = new Campground()
             //{ Name = campgroundDTO.Name, Image = campgroundDTO.Image ,Description = campgroundDTO.Description,Comments =campgroundDTO.Comments , ApplicationUserId = User.Identity.GetUserId()};
             var campground = Mapper.Map<CampgroundDTO, Campground>(campgroundDTO);
+            campground.CreatedAt = DateTime.Now;
             _context.Campgrounds.Add(campground);
             _context.SaveChanges();
             return RedirectToAction("GetAllCampgrounds");

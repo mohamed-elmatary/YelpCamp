@@ -21,7 +21,9 @@ namespace YelpCamp.App_Start
                    .ForMember(dest => dest.UserName, opt => opt.MapFrom(src =>  src.ApplicationUser.UserName ))
                    .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.ApplicationUserId))
                    .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
-                   .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments)).ReverseMap();
+                   .ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments))
+                   .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
+                   .ReverseMap();
 
            CreateMap<Comment, CommentDTO>()
                   .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
@@ -29,7 +31,9 @@ namespace YelpCamp.App_Start
                   .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.ApplicationUser.UserName))
                   .ForMember(dest => dest.CampgroundId, opt => opt.MapFrom(src => src.CampgroundId))
                   .ForMember(dest => dest.CampgroundName, opt => opt.MapFrom(src => src.Campground.Name))
-                  .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.ApplicationUserId)).ReverseMap();
+                  .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.ApplicationUserId))
+                  .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreatedAt))
+                  .ReverseMap();
             }
 
 

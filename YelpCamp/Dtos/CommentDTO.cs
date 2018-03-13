@@ -16,5 +16,8 @@ namespace YelpCamp.Dtos
 
         public string CampgroundName { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+
+
     }
 }
