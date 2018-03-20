@@ -1,17 +1,51 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <h1 class="text-center">Contact</h1>
+         @using(Html.BeginForm("Contact", "Home", FormMethod.Post)){
+            <div class="controls">
+                <div class="form-group">
+                    <label class="" for="form_name">Name</label>
+                    <input type="text" class="form-control" id="form_name" name="name" placeholder="Enter Name" required="required" data-error="Your Name is Required">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="form_phone">Phone</label>
+                    <input type="tel" class="form-control" id="form_phone" name="phone" placeholder="Phone" required="required" data-error="Your Phone Number is Required">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="form_email">Email</label>
+                    <input type="email" class="form-control" id="form_email" name="email" placeholder="Your Email Address" required="required" data-error="Your Email is Required">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label class="" for="form_message">Message</label>
+                    <textarea class="form-control" id="form_message" name="message" placeholder="Enter Message Here" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <!-- Insert the code for the reCaptcha check box -->
+                    <div class="g-recaptcha" data-sitekey="6Lf4nU0UAAAAAE71Bo-S8Q4qKTYSiBCAIbhFjqnj"></div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                </div>
+                @if (ViewBag.Error != null)
+                {
+                    <label style="color:red">ViewBag.Error</label>
+
+                }
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" style="width:280px">Send Email</button>
+                </div>
+                </div>
+        }
+        <a href="/campgrounds">Go Back</a>
+    </div>
+</div>
+@section scripts{
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+}

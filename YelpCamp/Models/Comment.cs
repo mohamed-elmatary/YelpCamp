@@ -13,16 +13,19 @@ namespace YelpCamp.Models
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        
-        public virtual ApplicationUser ApplicationUser { get; set; }
+
+
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
 
-        public Campground Campground { get; set; }
-        [ForeignKey("Campground")]
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         public int CampgroundId { get; set; }
 
+        [ForeignKey("CampgroundId")]
+        public virtual Campground Campground { get; set; }
+      
 
         public DateTime CreatedAt { get; set; }
     }

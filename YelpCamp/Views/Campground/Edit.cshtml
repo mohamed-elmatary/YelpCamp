@@ -4,65 +4,240 @@
     ViewBag.Title = "Edit";
 }
 
+<h2 style="padding-right:20px">Edit @Model.Name</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            @using (Html.BeginForm("Edit", "Campground", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal text-center">
+                    
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.Lat)
+                    @Html.HiddenFor(model => model.Long)
+                    @Html.HiddenFor(model => model.Image)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal text-center" style="width:60%; margin: 25px auto">
-        <h2 style="padding-right:20px">Edit @Model.Name</h2>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { type = "number", min = "0.01", step = "0.01", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-        <div class="form-group"  style="margin-left:70px" >
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            <input type="file" name="ImageFile" id="ImageUpload"  class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-8">
+                            <input type="submit" value="Save" class="btn btn-primary btn-block" />
+                        </div>
+                    </div>
+                   
+                </div>
+            }
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <div id="map" style="width:100%;height:400px">
+
+                </div>
             </div>
         </div>
-        <div class="form-group" style="margin-left:70px">
-            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { type = "number", min = "0.01", step = "0.01", @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group" style="margin-left:70px">
-            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group" style="margin-left:70px">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-        <div class="form-group" style="margin-left:70px">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-primary btn-block" />
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="thumbnail" style="width:100%;height:400px">
+                         <a class="fancybox" rel="gallery1" data-width="640"  data-height="360" href="@Url.Content(Model.Image)">
+                            <img id="imgpreview" class="img-responsive" src="@Url.Content(Model.Image)" style="height:100%;width:100%">
+                        </a>
+                </div>
             </div>
         </div>
     </div>
-}
-
+</div>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@section scripts
+{
+
+    <script type="text/javascript">
+
+    var geocoder;
+    var map;
+    var marker;
+    function initMap() {
+        var initialLat = $('#Lat').val();
+        var initialLong = $('#Long').val();
+     
+
+
+        var latlng = new google.maps.LatLng(initialLat, initialLong);
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: latlng,
+            zoom: 8
+        });
+
+        geocoder = new google.maps.Geocoder();
+
+        marker = new google.maps.Marker({
+            position: latlng,
+            draggable: true,
+            map: map
+        });
+
+        google.maps.event.addListener(marker, "dragend", function () {
+            var point = marker.getPosition();
+            map.panTo(point);
+            geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    marker.setPosition(results[0].geometry.location);
+                    $('#Address').val(results[0].formatted_address);
+                    $('#Lat').val(marker.getPosition().lat());
+                    $('#Long').val(marker.getPosition().lng());
+
+                }
+            });
+        });
+        var contentString = ' <strong>' +  $('#Address').val() +'</strong><br/>' +
+        '<p>('+ $('#Lat').val() + ',' + $('#Long').val()+')</p>'
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+
+
+    }
+
+    $(function () {
+
+        $(".fancybox").fancybox(
+            {
+                fitToView: false,
+                autoSize: false,
+                afterLoad: function () {
+                    this.width = $(this.element).data("width");
+                    this.height = $(this.element).data("height");
+                }
+               // fitToView: false,
+                //autoSize: false
+            });
+
+
+        initMap();
+
+        var PostCodeid = '#Address';
+        $(function () {
+            $(PostCodeid).autocomplete({
+                source: function (request, response) {
+                    geocoder.geocode({
+                        'address': request.term
+                    }, function (results, status) {
+                        response($.map(results, function (item) {
+                            return {
+                                label: item.formatted_address,
+                                value: item.formatted_address,
+                                lat: item.geometry.location.lat(),
+                                lon: item.geometry.location.lng()
+                            };
+                        }));
+                    });
+                },
+                select: function (event, ui) {
+                    $('#Address').val(ui.item.value);
+                    $('#Lat').val(ui.item.lat);
+                    $('#Long').val(ui.item.lon);
+                    var latlng = new google.maps.LatLng(ui.item.lat, ui.item.lon);
+                    marker.setPosition(latlng);
+                    initMap();
+                }
+            });
+        });
+
+        /*
+         * Point location on google map
+         */
+        //Add listener to marker for reverse geocoding
+        google.maps.event.addListener(marker, 'drag', function () {
+            geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        $('#Address').val(results[0].formatted_address);
+                        $('#Lat').val(marker.getPosition().lat());
+                        $('#Long').val(marker.getPosition().lng());
+                    }
+                }
+            });
+        });
+
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $("img#imgpreview")
+                        .attr("src", e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#ImageUpload").change(function () {
+            readURL(this);
+        });
+
+    });
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=APIkey&callback=initMap"
+            async defer></script>
+
+    <link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="~/Scripts/jquery.fancybox.js"></script>
+
+}

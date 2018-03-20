@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using YelpCamp.App_Start;
-
+using YelpCamp.Models;
 
 namespace YelpCamp
 {
@@ -26,7 +26,6 @@ namespace YelpCamp
                     C.AllowNullDestinationValues = true;
                 } 
             );
-
 
 
         }

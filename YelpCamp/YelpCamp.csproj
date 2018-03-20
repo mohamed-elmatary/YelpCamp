@@ -50,6 +50,14 @@
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +91,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -150,12 +166,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -198,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CaptchaResponse.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\MappingConfig.cs" />
@@ -213,41 +224,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803091449462_InitialModel.cs" />
-    <Compile Include="Migrations\201803091449462_InitialModel.Designer.cs">
-      <DependentUpon>201803091449462_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201803141902004_InitialModel.cs" />
+    <Compile Include="Migrations\201803141902004_InitialModel.Designer.cs">
+      <DependentUpon>201803141902004_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803091458139_UpdateCommentModel.cs" />
-    <Compile Include="Migrations\201803091458139_UpdateCommentModel.Designer.cs">
-      <DependentUpon>201803091458139_UpdateCommentModel.cs</DependentUpon>
+    <Compile Include="Migrations\201803141912190_seedDatabase.cs" />
+    <Compile Include="Migrations\201803141912190_seedDatabase.Designer.cs">
+      <DependentUpon>201803141912190_seedDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803091644485_UpdateCommentModel2.cs" />
-    <Compile Include="Migrations\201803091644485_UpdateCommentModel2.Designer.cs">
-      <DependentUpon>201803091644485_UpdateCommentModel2.cs</DependentUpon>
+    <Compile Include="Migrations\201803142057224_InitialModel2.cs" />
+    <Compile Include="Migrations\201803142057224_InitialModel2.Designer.cs">
+      <DependentUpon>201803142057224_InitialModel2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803091759175_UpdateCampgroundModel.cs" />
-    <Compile Include="Migrations\201803091759175_UpdateCampgroundModel.Designer.cs">
-      <DependentUpon>201803091759175_UpdateCampgroundModel.cs</DependentUpon>
+    <Compile Include="Migrations\201803142121168_InitialModel23.cs" />
+    <Compile Include="Migrations\201803142121168_InitialModel23.Designer.cs">
+      <DependentUpon>201803142121168_InitialModel23.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803102027208_UpdateComment.cs" />
-    <Compile Include="Migrations\201803102027208_UpdateComment.Designer.cs">
-      <DependentUpon>201803102027208_UpdateComment.cs</DependentUpon>
+    <Compile Include="Migrations\201803151924498_seedAdminUserToDatabase.cs" />
+    <Compile Include="Migrations\201803151924498_seedAdminUserToDatabase.Designer.cs">
+      <DependentUpon>201803151924498_seedAdminUserToDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803102029273_UpdateDatabase.cs" />
-    <Compile Include="Migrations\201803102029273_UpdateDatabase.Designer.cs">
-      <DependentUpon>201803102029273_UpdateDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803122255405_ModifyCampgroundModel.cs" />
-    <Compile Include="Migrations\201803122255405_ModifyCampgroundModel.Designer.cs">
-      <DependentUpon>201803122255405_ModifyCampgroundModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803131746345_updateCommentAndCampWithCreatAtDate.cs" />
-    <Compile Include="Migrations\201803131746345_updateCommentAndCampWithCreatAtDate.Designer.cs">
-      <DependentUpon>201803131746345_updateCommentAndCampWithCreatAtDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803131753170_updateCommentAndCampWithCreatAtDate1.cs" />
-    <Compile Include="Migrations\201803131753170_updateCommentAndCampWithCreatAtDate1.Designer.cs">
-      <DependentUpon>201803131753170_updateCommentAndCampWithCreatAtDate1.cs</DependentUpon>
+    <Compile Include="Migrations\201803152223565_UpdateCampgroundForLocation.cs" />
+    <Compile Include="Migrations\201803152223565_UpdateCampgroundForLocation.Designer.cs">
+      <DependentUpon>201803152223565_UpdateCampgroundForLocation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -256,17 +255,70 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ViewModel\AddCommentToCmpgroundModel.cs" />
+    <Compile Include="Models\ViewModel\UserProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fancybox\blank.gif" />
+    <Content Include="Content\fancybox\fancybox_buttons.png" />
+    <Content Include="Content\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\jquery.fancybox-buttons.css" />
+    <Content Include="Content\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\landing.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -301,6 +353,14 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\jquery.fancybox-media.js" />
+    <Content Include="Scripts\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -324,7 +384,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -374,9 +436,11 @@
     <Content Include="Views\Campground\Edit.cshtml" />
     <Content Include="Views\Comment\Edit.cshtml" />
     <Content Include="Views\Shared\_FlashMessage.cshtml" />
+    <Content Include="Views\Account\GetUserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -389,32 +453,23 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803091449462_InitialModel.resx">
-      <DependentUpon>201803091449462_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803141902004_InitialModel.resx">
+      <DependentUpon>201803141902004_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803091458139_UpdateCommentModel.resx">
-      <DependentUpon>201803091458139_UpdateCommentModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803141912190_seedDatabase.resx">
+      <DependentUpon>201803141912190_seedDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803091644485_UpdateCommentModel2.resx">
-      <DependentUpon>201803091644485_UpdateCommentModel2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803142057224_InitialModel2.resx">
+      <DependentUpon>201803142057224_InitialModel2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803091759175_UpdateCampgroundModel.resx">
-      <DependentUpon>201803091759175_UpdateCampgroundModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803142121168_InitialModel23.resx">
+      <DependentUpon>201803142121168_InitialModel23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803102027208_UpdateComment.resx">
-      <DependentUpon>201803102027208_UpdateComment.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803151924498_seedAdminUserToDatabase.resx">
+      <DependentUpon>201803151924498_seedAdminUserToDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803102029273_UpdateDatabase.resx">
-      <DependentUpon>201803102029273_UpdateDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803122255405_ModifyCampgroundModel.resx">
-      <DependentUpon>201803122255405_ModifyCampgroundModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803131746345_updateCommentAndCampWithCreatAtDate.resx">
-      <DependentUpon>201803131746345_updateCommentAndCampWithCreatAtDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803131753170_updateCommentAndCampWithCreatAtDate1.resx">
-      <DependentUpon>201803131753170_updateCommentAndCampWithCreatAtDate1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803152223565_UpdateCampgroundForLocation.resx">
+      <DependentUpon>201803152223565_UpdateCampgroundForLocation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

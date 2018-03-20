@@ -27,41 +27,76 @@ namespace YelpCamp.Controllers
             return View();
            
         }
-        [HttpGet]
-        public ActionResult CreateComment(int CampgroundId)
-        {
-             
-            var campground =_context.Campgrounds.FirstOrDefault(c => c.Id == CampgroundId);
-            if (campground == null)
-            {
-                FlashMessage("Campground Not Found", FlashMessageType.info);
-                return RedirectToAction("Details","Campground", new { Id = CampgroundId });
+        //[HttpGet]
+        //public ActionResult CreateComment(int? CampgroundId)
+        //{
 
-            }
+        //    var campground =_context.Campgrounds.FirstOrDefault(c => c.Id == CampgroundId);
+        //    if (campground == null)
+        //    {
+        //        FlashMessage("Campground Not Found", FlashMessageType.info);
+        //        return RedirectToAction("GetAllCampgrounds", "Campground", new { Id = CampgroundId });
 
-            CommentDTO commentDto = new CommentDTO() { CampgroundId = CampgroundId, CampgroundName = campground.Name  };
-            return View("CreateComment", commentDto);
+        //    }
 
-        }
+        //    CommentDTO commentDto = new CommentDTO() { CampgroundId = campground.Id, CampgroundName = campground.Name  };
+        //    return View("CreateComment", commentDto);
+
+        //}
         [HttpPost]
-        public ActionResult CreateComment(CommentDTO CommetDto)
+        public ActionResult CreateComment(FormCollection Form , int? CampgroundId)
         {
-            var campground = _context.Campgrounds.FirstOrDefault(c => c.Id == CommetDto.CampgroundId);
+            var campground = _context.Campgrounds.FirstOrDefault(c => c.Id == CampgroundId);
             if (campground == null)
             {
                 FlashMessage("Campground Not Found", FlashMessageType.info);
                 return RedirectToAction("Details", "Campground", new { Id = campground.Id });
 
             }
-            Comment comment = new Comment() { Text = CommetDto.Text, ApplicationUserId = User.Identity.GetUserId() ,CreatedAt = DateTime.Now};
+            Comment comment = new Comment() { Text = Form["commentText"] ,CreatedAt = DateTime.Now};
+            string currentUserId = User.Identity.GetUserId();
+            comment.ApplicationUserId = currentUserId;
             campground.Comments.Add(comment);
             _context.SaveChanges();
-            return RedirectToAction("Details", "Campground", new { Id = CommetDto.CampgroundId });
+            return RedirectToAction("Details", "Campground", new { Id = CampgroundId });
         }
 
-        [HttpGet]
-        public ActionResult Edit(int CampId , int CommentId)
+       // [HttpGet]
+        //public ActionResult Edit(int CampId , int CommentId)
+        //{
+        //    var campground = _context.Campgrounds.Include("Comments").FirstOrDefault(C => C.Id == CampId);
+        //    if (campground == null)
+        //    {
+        //        FlashMessage("Campground Not Found", FlashMessageType.info);
+        //        return RedirectToAction("GetAllCampgrounds", "Campground");
+
+        //    }
+        //    var comment = campground.Comments.FirstOrDefault(c => c.Id == CommentId);
+        //    if (comment == null)
+        //    {
+        //        FlashMessage("Comment Not Found", FlashMessageType.info);
+        //        return RedirectToAction("Details", "Campground", new { Id = campground.Id });
+
+        //    }
+        //    if ((comment.ApplicationUser.Id != User.Identity.GetUserId()) && !(User.IsInRole("Admin")))
+        //    {
+        //        FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
+        //        return RedirectToAction("Details", "Campground", new { Id = campground.Id });
+
+        //    }
+
+        //    CommentDTO CommentDto = new CommentDTO() { Id = comment.Id, Text = comment.Text , CampgroundId = CampId};
+
+        //    return View("Edit", CommentDto);
+
+        //}
+        [HttpPost]
+        public ActionResult Edit(FormCollection Form, int CampId, int CommentId)
         {
+
+
+            var s =Request.Params["commentText"];
+
             var campground = _context.Campgrounds.Include("Comments").FirstOrDefault(C => C.Id == CampId);
             if (campground == null)
             {
@@ -76,43 +111,7 @@ namespace YelpCamp.Controllers
                 return RedirectToAction("Details", "Campground", new { Id = campground.Id });
 
             }
-            if (comment.ApplicationUserId != User.Identity.GetUserId())
-            {
-                FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
-                return RedirectToAction("Details", "Campground", new { Id = campground.Id });
-
-            }
-
-            CommentDTO CommentDto = new CommentDTO() { Id = comment.Id, Text = comment.Text , CampgroundId = CampId};
-
-            return View("Edit", CommentDto);
-
-        }
-        [HttpPost]
-        public ActionResult Edit(CommentDTO CommentDto)
-        {
-
-            if (!ModelState.IsValid)
-            {
-                return View("Edit", CommentDto);
-            }
-
-
-            var campground = _context.Campgrounds.Include("Comments").FirstOrDefault(C => C.Id == CommentDto.CampgroundId);
-            if (campground == null)
-            {
-                FlashMessage("Campground Not Found", FlashMessageType.info);
-                return RedirectToAction("Details", "Campground", new { Id = campground.Id });
-
-            }
-            var comment = campground.Comments.FirstOrDefault(c => c.Id == CommentDto.Id);
-            if (comment == null)
-            {
-                FlashMessage("Comment Not Found", FlashMessageType.info);
-                return RedirectToAction("Details", "Campground", new { Id = campground.Id });
-
-            }
-            if (comment.ApplicationUserId != User.Identity.GetUserId())
+            if ((comment.ApplicationUser.Id != User.Identity.GetUserId()) && !(User.IsInRole("Admin")))
             {
                 {
                     FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
@@ -121,10 +120,10 @@ namespace YelpCamp.Controllers
                 }
             }
 
-            comment.Text = CommentDto.Text;
+             comment.Text = Form["commentText"];
             _context.SaveChanges();
 
-            return RedirectToAction("Details","Campground", new { Id = CommentDto.CampgroundId });
+            return RedirectToAction("Details","Campground", new { Id = CampId});
 
         }
         public ActionResult Delete(int CampId, int CommentId)
@@ -133,7 +132,7 @@ namespace YelpCamp.Controllers
             if (campground == null)
             {
                 FlashMessage("Campground Not Found", FlashMessageType.info);
-                return RedirectToAction("Details", "Campground", new { Id = campground.Id });
+                return RedirectToAction("GetAllCampgrounds", "Campground");
 
             }
             var comment = campground.Comments.FirstOrDefault(c => c.Id == CommentId);
@@ -143,7 +142,7 @@ namespace YelpCamp.Controllers
                 return RedirectToAction("Details", "Campground", new { Id = campground.Id });
 
             }
-            if (comment.ApplicationUserId != User.Identity.GetUserId())
+            if ((comment.ApplicationUser.Id != User.Identity.GetUserId()) && !(User.IsInRole("Admin")))
             {
                 FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
                 return RedirectToAction("Details", "Campground", new { Id = campground.Id });

@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNet.Identity
+@model YelpCamp.Models.ViewModel.UserProfileModel
+
+<div class="row">
+    <div class="col-md-4">
+        <h1>@Model.User.UserName</h1>
+        <div class="thumbnail">
+            @*<img src="<%= user.avatar %>" alt="user profile image">*@
+            <div class="caption"><a>@Model.User.Email</a></div>
+        </div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
+    </div>
+    <div class="col-md-8">
+        <h3>@Model.User.UserName's campgrounds:</h3>
+        @if(Model.Campgrounds != null) { 
+            foreach (var campground in Model.Campgrounds)
+            {
+        
+                <div class="thumbnail">
+                    <img class="img-responsive" src="@campground.Image" style="height:401px">
+                    <div class="caption-full">
+                        <h4 class="pull-right">$@campground.Price/night</h4>
+                        <h4><a href="/campground/Details/@campground.Id">@campground.Name</a></h4>
+                        <p>@campground.Description</p>
+                    
+                        @if (User.Identity.GetUserId() == Model.User.Id || User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", "Campground", new { CampId = campground.Id }, new { @class = "btn btn-warning", style = "margin-right:5px" })
+                            @Html.ActionLink("Delete", "Delete", "Campground", new { CampId = campground.Id }, new { @class = "btn btn-danger" })
+                        }
+                    </div>
+                </div>
+                <hr/>
+            }
+        }
+    </div>
+</div>

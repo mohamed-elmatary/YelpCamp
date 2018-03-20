@@ -6,6 +6,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using YelpCamp.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using YelpCamp.Models.ViewModel;
+using AutoMapper;
+using YelpCamp.Dtos;
+using System.Collections.Generic;
 
 namespace YelpCamp.Controllers
 {
@@ -163,6 +168,12 @@ namespace YelpCamp.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //var rolestore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var rolemanager = new RoleManager<IdentityRole>(rolestore);
+                    //await rolemanager.CreateAsync(new IdentityRole("Admin"));
+                    //await UserManager.AddToRoleAsync(user.Id, "Admin");
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -210,19 +221,19 @@ namespace YelpCamp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
+                var user = await UserManager.FindByEmailAsync(model.Email);
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    //return View("ForgotPasswordConfirmation");
                 }
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -256,7 +267,7 @@ namespace YelpCamp.Controllers
             {
                 return View(model);
             }
-            var user = await UserManager.FindByNameAsync(model.Email);
+            var user = await UserManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
                 // Don't reveal that the user does not exist
@@ -420,16 +431,42 @@ namespace YelpCamp.Controllers
         [AllowAnonymous]
         public JsonResult IsUserNameAvailable(string UserName)
         {
-            return Json(!_context.Users.Any(x => x.UserName == UserName),
+            using (ApplicationDbContext _contex = new ApplicationDbContext())
+            {
+                return Json(!_context.Users.Any(x => x.UserName == UserName),
                                                 JsonRequestBehavior.AllowGet);
+            }
         }
 
         [AllowAnonymous]
         public JsonResult IsEmailAvailable(string Email)
         {
-            return Json(!_context.Users.Any(x => x.Email == Email),
-                                                 JsonRequestBehavior.AllowGet);
+            using (ApplicationDbContext _contex = new ApplicationDbContext())
+            {
+                return Json(!_context.Users.Any(x => x.Email == Email),
+                                                     JsonRequestBehavior.AllowGet);
+            }
         }
+
+        public ActionResult GetUserProfile(string UserId)
+        {
+           
+            UserProfileModel profile = new UserProfileModel();
+
+            var user = _context.Users.FirstOrDefault(U => U.Id == UserId);
+            if (user == null)
+            {
+                FlashMessage("This Is Not Found", FlashMessageType.info);
+                return RedirectToAction("GetAllCampgrounds", "Campground");
+            }
+            profile.User = user;
+            var campgrounds = _context.Campgrounds.Where(c => c.ApplicationUserId == UserId);
+            if (campgrounds != null)
+                profile.Campgrounds = campgrounds.Select(Mapper.Map<Campground, CampgroundDTO>).ToList();
+            return View("GetUserProfile", profile);
+        }
+
+       
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -445,14 +482,15 @@ namespace YelpCamp.Controllers
                     _signInManager.Dispose();
                     _signInManager = null;
                 }
-                if (_context != null)
-                {
-                    _context.Dispose();
-                    _context = null;
-                }
+               
             }
 
             base.Dispose(disposing);
+        }
+        private void FlashMessage(string message, FlashMessageType Type)
+        {
+            TempData["Message"] = message;
+            TempData["cls"] = Type;
         }
 
         #region Helpers

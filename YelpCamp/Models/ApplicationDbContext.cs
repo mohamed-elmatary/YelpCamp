@@ -11,7 +11,6 @@ namespace YelpCamp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Campground> Campgrounds { get; set; }
-
         public DbSet<Comment> Comments { get; set; }
 
         public ApplicationDbContext()
@@ -24,11 +23,6 @@ namespace YelpCamp.Models
             return new ApplicationDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            //modelBuilder.Entity<ApplicationUser>().HasOptional(U => U.Comment).WithRequired(C => C.ApplicationUser);
 
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

@@ -15,24 +15,25 @@ namespace YelpCamp.Models
             Comments = new HashSet<Comment>();
         }
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Image { get; set; }
+
+        [ForeignKey("ApplicationUser")]
+        public string ApplicationUserId { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         public string Description { get; set; }
-        [ForeignKey("ApplicationUser")]
-        public string ApplicationUserId { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
 
         public decimal Price { get; set; }
-
+        
         public DateTime CreatedAt { get; set; }
 
-
+        public string Address { get; set; }
+        public double Lat { get; set; }
+        public double Long { get; set; }
 
     }
     public enum FlashMessageType

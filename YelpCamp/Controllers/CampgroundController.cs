@@ -1,7 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNet.Identity;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,14 +27,13 @@ namespace YelpCamp.Controllers
         // GET: Camp
       
         [AllowAnonymous]
-        public ActionResult GetAllCampgrounds()
+        public ActionResult GetAllCampgrounds(string search, int? page)
         {
+            
 
-    
-
-            var campgrounds = _context.Campgrounds.Include("Comments")
+            var campgrounds = _context.Campgrounds.Include("Comments").Where(c => c.Name.Contains(search) || search == null)
                  .ToList()
-              .Select(Mapper.Map<Campground, CampgroundDTO>);
+              .ToPagedList(page ?? 1 , 8);
                 //.Select(C => new CampgroundDTO()
                 //{ Id = C.Id, Image = C.Image , Name =C.Name ,Description = C.Description , Comments = C.Comments });
             
@@ -38,7 +42,8 @@ namespace YelpCamp.Controllers
         [HttpGet]
         public ActionResult CreateCampground()
         {
-            return View();
+            CampgroundDTO campgroundDto = new CampgroundDTO() {Lat= 30.044420,Long = 31.235712 };
+            return View(campgroundDto);
 
         }
         [HttpPost]
@@ -49,54 +54,92 @@ namespace YelpCamp.Controllers
             {
                 return View("CreateCampground", campgroundDTO);
             }
+            //try
+            //{
+            var ext = Path.GetExtension(campgroundDTO.ImageFile.FileName);
+            if (ext != ".jpg" && ext != ".jpeg" && ext != ".pjpeg" && ext != ".gif" && ext != ".x-png" && ext != ".png")
+            {
+                    ModelState.AddModelError("", "The image was not uploaded - wrong image extension.");
+                    return View(campgroundDTO);
+                
+            }
 
-            //Campground newCampground = new Campground()
-            //{ Name = campgroundDTO.Name, Image = campgroundDTO.Image ,Description = campgroundDTO.Description,Comments =campgroundDTO.Comments , ApplicationUserId = User.Identity.GetUserId()};
-            var campground = Mapper.Map<CampgroundDTO, Campground>(campgroundDTO);
+
+            var path = Path.Combine(Server.MapPath("~/Upload/Images/"), campgroundDTO.ImageFile.FileName);
+            campgroundDTO.ImageFile.SaveAs(path);
+
+            Campground campground = Mapper.Map<CampgroundDTO, Campground>(campgroundDTO);
             campground.CreatedAt = DateTime.Now;
+            campground.ApplicationUserId = User.Identity.GetUserId();
+            campground.Image = "~/Upload/Images/" + campgroundDTO.ImageFile.FileName;
             _context.Campgrounds.Add(campground);
             _context.SaveChanges();
             return RedirectToAction("GetAllCampgrounds");
+            //}
+            //catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            //{
+            //    Exception raise = dbEx;
+            //    foreach (var validationErrors in dbEx.EntityValidationErrors)
+            //    {
+            //        foreach (var validationError in validationErrors.ValidationErrors)
+            //        {
+            //            string message = string.Format("{0}:{1}",
+            //                validationErrors.Entry.Entity.ToString(),
+            //                validationError.ErrorMessage);
+            //            // raise a new exception nesting  
+            //            // the current instance as InnerException  
+            //            raise = new InvalidOperationException(message, raise);
+            //        }
+            //    }
+            //    throw raise;
+            //}
+
 
         }
         [HttpGet]
-        public ActionResult Details(int Id )
-        {
-           
-            var campground = _context.Campgrounds.Include("Comments").FirstOrDefault(C => C.Id == Id);
+        public ActionResult Details(int? Id )
+       {
+            if (Id == null)
+                return RedirectToAction("GetAllCampgrounds");
+            var campground = _context.Campgrounds.Include("Comments").Include("ApplicationUser").FirstOrDefault(C => C.Id == Id);
             if (campground == null)
             {
-
-
                 FlashMessage("Campground Not Found", FlashMessageType.info);
-
-
                 return RedirectToAction("GetAllCampgrounds");
-
-                //return Content("you are not allowed to do this");
-
             }
             CampgroundDTO campDTO = Mapper.Map<Campground, CampgroundDTO>(campground);
+            campDTO.Image = campground.Image;
+
+            campDTO.UserName = campground.ApplicationUser.UserName;
+            
             //{ Id = campground.Id, Name = campground.Name, Image = campground.Image, Description = campground.Description , Comments = campground.Comments , UserName =campground.ApplicationUser.UserName , UserId = campground.ApplicationUserId };
             return View("Details", campDTO);
             
         }
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult Edit(int CampId )
+        public ActionResult Edit(int? CampId )
         {
-
+            if (CampId == null)
+                return RedirectToAction("GetAllCampgrounds");
             
+
+
             var campground = _context.Campgrounds.Include("Comments").FirstOrDefault(C => C.Id == CampId);
-            if(campground.ApplicationUserId != User.Identity.GetUserId())
+            if (campground == null)
+            {
+                FlashMessage("Campground Not Found", FlashMessageType.info);
+                return RedirectToAction("GetAllCampgrounds");
+            }
+            if ((campground.ApplicationUser.Id != User.Identity.GetUserId()) && !(User.IsInRole("Admin")))
             {
                 FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
-                return RedirectToAction("Details", new { Id = CampId });             
+                return RedirectToAction("GetAllCampgrounds");             
             }
-            if (campground == null)
-                return HttpNotFound("There is Some error");
+          
             CampgroundDTO campDTO = Mapper.Map<Campground, CampgroundDTO>(campground);
-           // { Id = campground.Id, Name = campground.Name, Image = campground.Image, Description = campground.Description, Comments = campground.Comments, UserName = campground.ApplicationUser.UserName };
+
+            // { Id = campground.Id, Name = campground.Name, Image = campground.Image, Description = campground.Description, Comments = campground.Comments, UserName = campground.ApplicationUser.UserName };
             return View("Edit", campDTO);
 
         }
@@ -110,41 +153,66 @@ namespace YelpCamp.Controllers
             }
             var campground = _context.Campgrounds.FirstOrDefault(C => C.Id == CampDto.Id);
 
-            if (campground.ApplicationUserId != User.Identity.GetUserId())
+            if (campground == null)
+            {
+                FlashMessage("Campground Not Found", FlashMessageType.info);
+
+                return RedirectToAction("GetAllCampgrounds");
+            }
+            if ((campground.ApplicationUser.Id != User.Identity.GetUserId()) && !(User.IsInRole("Admin")))
             {
 
                 FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
                 return RedirectToAction("Details", new { Id = CampDto.Id });
 
             }
-
-            if (campground == null)
+            //campground = Mapper.Map<CampgroundDTO, Campground>(CampDto);
+            if (CampDto.ImageFile != null)
             {
-                FlashMessage("Campground Not Found", FlashMessageType.info);
+                var ext = Path.GetExtension(CampDto.ImageFile.FileName);
+                if (ext != ".jpg" && ext != ".jpeg" && ext != ".pjpeg" && ext != ".gif" && ext != ".x-png" && ext != ".png")
+                {
+                    ModelState.AddModelError("", "The image was not uploaded - wrong image extension.");
+                    return View(CampDto);
 
-                return RedirectToAction("Details", new { Id = CampDto.Id });
+                }
+                var path = Path.Combine(Server.MapPath("~/Upload/Images/"), CampDto.ImageFile.FileName);
+                CampDto.ImageFile.SaveAs(path);
+                campground.Image = "~/Upload/Images/" + CampDto.ImageFile.FileName;
             }
-            campground.Image = CampDto.Image;
+
             campground.Description = CampDto.Description;
             campground.Name = CampDto.Name;
             campground.Price = CampDto.Price;
+            campground.Lat = CampDto.Lat;
+            campground.Long = CampDto.Long;
+            campground.Address = CampDto.Address;
 
             _context.SaveChanges();
 
             return RedirectToAction("Details",new {Id = CampDto.Id });
 
         }
-        public ActionResult Delete(int CampId)
+        public ActionResult Delete(int? CampId)
         {
-            var campground = _context.Campgrounds.FirstOrDefault(C => C.Id == CampId);
-            if (campground.ApplicationUserId != User.Identity.GetUserId())
+            if(CampId == null)
             {
-                FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
-                return RedirectToAction("Details", new { Id = CampId });
+                return RedirectToAction("GetAllCampgrounds");
+            }
+            var campground = _context.Campgrounds.FirstOrDefault(C => C.Id == CampId);
+            if (campground == null)
+            {
+                FlashMessage("Campground Not Found", FlashMessageType.info);
+                return RedirectToAction("GetAllCampgrounds");
 
             }
-            if (campground == null)
-                return HttpNotFound("There is Some error");
+            if ((campground.ApplicationUser.Id != User.Identity.GetUserId()) && !(User.IsInRole("Admin")))
+            {
+                FlashMessage("You Do Not Have Permission To Do This", FlashMessageType.warning);
+                return RedirectToAction("GetAllCampgrounds");
+
+            }
+
             _context.Campgrounds.Remove(campground);
             _context.SaveChanges();
             return RedirectToAction("GetAllCampgrounds");
