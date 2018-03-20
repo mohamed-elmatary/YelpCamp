@@ -1,0 +1,272 @@
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\ApplicationInsights.config
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\csc.exe
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\System.Collections.Immutable.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\vbc.exe
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\VBCSCompiler.exe
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\roslyn\VBCSCompiler.exe.config
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\YelpCamp.dll.config
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\YelpCamp.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\YelpCamp.pdb
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Antlr3.Runtime.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\EntityFramework.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\EntityFramework.SqlServer.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.Web.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.WindowsServer.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.ApplicationInsights.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Google.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Web.Infrastructure.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Newtonsoft.Json.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Owin.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Helpers.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Mvc.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Optimization.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Razor.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.WebPages.Deployment.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.WebPages.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.WebPages.Razor.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\WebGrease.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.Web.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AI.WindowsServer.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.ApplicationInsights.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Helpers.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Mvc.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Optimization.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.Razor.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.WebPages.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.WebPages.Deployment.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\System.Web.WebPages.Razor.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Antlr3.Runtime.pdb
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Newtonsoft.Json.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\EntityFramework.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\EntityFramework.SqlServer.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Google.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.dll
+c:\users\volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.pdb
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\bin\AutoMapper.dll
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\bin\AutoMapper.xml
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.InitialModel.resources
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.csproj.GenerateResource.Cache
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateCommentModel.resources
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateCommentModel2.resources
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateCampgroundModel.resources
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateComment.resources
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateDatabase.resources
+C:\Users\Volga\documents\visual studio 2015\Projects\YelpCamp\obj\Debug\YelpCamp.Migrations.ModifyCampgroundModel.resources
+E:\Projects\YelpCamp\YelpCamp\bin\ApplicationInsights.config
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\csc.exe
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\System.Collections.Immutable.dll
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\System.Reflection.Metadata.dll
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\vbc.exe
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\VBCSCompiler.exe
+E:\Projects\YelpCamp\YelpCamp\bin\roslyn\VBCSCompiler.exe.config
+E:\Projects\YelpCamp\YelpCamp\bin\YelpCamp.dll.config
+E:\Projects\YelpCamp\YelpCamp\bin\YelpCamp.dll
+E:\Projects\YelpCamp\YelpCamp\bin\YelpCamp.pdb
+E:\Projects\YelpCamp\YelpCamp\bin\Antlr3.Runtime.dll
+E:\Projects\YelpCamp\YelpCamp\bin\AutoMapper.dll
+E:\Projects\YelpCamp\YelpCamp\bin\EntityFramework.dll
+E:\Projects\YelpCamp\YelpCamp\bin\EntityFramework.SqlServer.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.DependencyCollector.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.Web.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.WindowsServer.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.ApplicationInsights.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Google.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Web.Infrastructure.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Newtonsoft.Json.dll
+E:\Projects\YelpCamp\YelpCamp\bin\Owin.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Helpers.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Mvc.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Optimization.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Razor.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Deployment.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.dll
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Razor.dll
+E:\Projects\YelpCamp\YelpCamp\bin\WebGrease.dll
+E:\Projects\YelpCamp\YelpCamp\bin\AutoMapper.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.DependencyCollector.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.Web.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.WindowsServer.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.ApplicationInsights.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Helpers.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Mvc.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Optimization.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.Razor.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Deployment.xml
+E:\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Razor.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Antlr3.Runtime.pdb
+E:\Projects\YelpCamp\YelpCamp\bin\Newtonsoft.Json.xml
+E:\Projects\YelpCamp\YelpCamp\bin\EntityFramework.xml
+E:\Projects\YelpCamp\YelpCamp\bin\EntityFramework.SqlServer.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Google.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.dll
+E:\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.pdb
+E:\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.csprojResolveAssemblyReference.cache
+E:\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.InitialModel.resources
+E:\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.csproj.GenerateResource.Cache
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\ApplicationInsights.config
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\csc.exe
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\vbc.exe
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\YelpCamp.dll.config
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\YelpCamp.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\YelpCamp.pdb
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Antlr3.Runtime.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\AutoMapper.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\EntityFramework.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\EntityFramework.SqlServer.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.Web.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Newtonsoft.Json.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Owin.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Helpers.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Mvc.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Optimization.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Razor.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\WebGrease.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\AutoMapper.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\EntityFramework.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\EntityFramework.SqlServer.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.Web.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Helpers.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Mvc.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Optimization.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.Razor.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Antlr3.Runtime.pdb
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Newtonsoft.Json.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.pdb
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.InitialModel.resources
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.csproj.GenerateResource.Cache
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.seedDatabase.resources
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.InitialModel2.resources
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.InitialModel23.resources
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.seedAdminUserToDatabase.resources
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateCampgroundForLocation.resources
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.csprojResolveAssemblyReference.cache
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.Mvc.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.Mvc.xml
