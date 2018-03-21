@@ -39,7 +39,7 @@ namespace YelpCamp.Controllers
         public async Task<ActionResult> Contact(FormCollection form)
         {
             string response = form["g-recaptcha-response"];
-            const string secret = "6Lf4nU0UAAAAAAf_auexzLBZmZWNDa2K9DOhfFwV";
+            const string secret = "6LfP4E0UAAAAAA2QYHfRwYyfKDN8YOsCSZ27VY0c";
 
             var client = new WebClient();
             var reply =
