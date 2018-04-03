@@ -265,7 +265,6 @@ C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.InitialModel23.resources
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.seedAdminUserToDatabase.resources
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.Migrations.UpdateCampgroundForLocation.resources
-C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.csprojResolveAssemblyReference.cache
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.dll
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.Mvc.dll
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.xml

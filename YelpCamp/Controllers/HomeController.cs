@@ -81,7 +81,7 @@ namespace YelpCamp.Controllers
             mail.IsBodyHtml = true;
 
             // Plug in your email service here to send an email.
-            await smtpClient.SendMailAsync(mail);
+           // await smtpClient.SendMailAsync(mail);
             FlashMessage("Your Email Has Send Succefuly", FlashMessageType.success);
 
             return RedirectToAction("GetAllCampgrounds", "Campground");
