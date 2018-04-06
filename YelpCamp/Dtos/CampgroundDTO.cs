@@ -16,6 +16,7 @@ namespace YelpCamp.Dtos
         }
         public int Id { get; set; } 
         [Required]
+        [MaxLength(50,ErrorMessage ="You exceed max length")]
         public string Name { get; set; }
         public string Image { get; set; }
         [Required]

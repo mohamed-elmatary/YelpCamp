@@ -277,7 +277,7 @@
     <Content Include="Content\jquery.fancybox-thumbs.css" />
     <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\landing.css" />
-    <Content Include="Content\main.css" />
+    <Content Include="Content\Main.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\smart-forms.css" />
     <Content Include="Content\themes\base\accordion.css" />

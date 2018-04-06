@@ -269,3 +269,4 @@ C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\Paged
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.Mvc.dll
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.xml
 C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\bin\PagedList.Mvc.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YelpCamp\YelpCamp\obj\Debug\YelpCamp.csprojResolveAssemblyReference.cache

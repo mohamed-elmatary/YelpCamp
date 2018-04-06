@@ -27,10 +27,10 @@ namespace YelpCamp
                       "~/Scripts/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/Main.css",
                       "~/Content/font-awesome.min.css",
                       "~/Content/bootstrap.min.css",
-                      "~/Content/site.css",
-                      "~/Content/main.css"
+                      "~/Content/site.css"
                      ));
         }
     }
